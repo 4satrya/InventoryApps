@@ -19,15 +19,18 @@ Partial Class FormMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMain))
         Me.NBMenu = New DevExpress.XtraNavBar.NavBarControl()
         Me.NBGMaster = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NBProduct = New DevExpress.XtraNavBar.NavBarItem()
-        Me.PanelMenu = New DevExpress.XtraEditors.PanelControl()
         Me.NBUser = New DevExpress.XtraNavBar.NavBarItem()
+        Me.PanelMenu = New DevExpress.XtraEditors.PanelControl()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         CType(Me.NBMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMenu.SuspendLayout()
+        CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NBMenu
@@ -59,6 +62,12 @@ Partial Class FormMain
         Me.NBProduct.Name = "NBProduct"
         Me.NBProduct.SmallImage = CType(resources.GetObject("NBProduct.SmallImage"), System.Drawing.Image)
         '
+        'NBUser
+        '
+        Me.NBUser.Caption = "User Management"
+        Me.NBUser.Name = "NBUser"
+        Me.NBUser.SmallImage = CType(resources.GetObject("NBUser.SmallImage"), System.Drawing.Image)
+        '
         'PanelMenu
         '
         Me.PanelMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -69,11 +78,9 @@ Partial Class FormMain
         Me.PanelMenu.Size = New System.Drawing.Size(205, 562)
         Me.PanelMenu.TabIndex = 2
         '
-        'NBUser
+        'XtraTabbedMdiManager1
         '
-        Me.NBUser.Caption = "User Management"
-        Me.NBUser.Name = "NBUser"
-        Me.NBUser.SmallImage = CType(resources.GetObject("NBUser.SmallImage"), System.Drawing.Image)
+        Me.XtraTabbedMdiManager1.MdiParent = Me
         '
         'FormMain
         '
@@ -81,6 +88,9 @@ Partial Class FormMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 562)
         Me.Controls.Add(Me.PanelMenu)
+        Me.IsMdiContainer = True
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MinimizeBox = False
         Me.Name = "FormMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -89,6 +99,7 @@ Partial Class FormMain
         CType(Me.NBMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelMenu.ResumeLayout(False)
+        CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -97,4 +108,5 @@ Partial Class FormMain
     Friend WithEvents PanelMenu As DevExpress.XtraEditors.PanelControl
     Friend WithEvents NBProduct As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NBUser As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
 End Class
