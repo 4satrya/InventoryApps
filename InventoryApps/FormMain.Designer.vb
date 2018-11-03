@@ -40,11 +40,11 @@ Partial Class FormMain
         Me.NBMenu.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NBGMaster})
         Me.NBMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NBProduct, Me.NBUser})
         Me.NBMenu.Location = New System.Drawing.Point(0, 0)
-        Me.NBMenu.LookAndFeel.SkinName = "Visual Studio 2013 Blue"
+        Me.NBMenu.LookAndFeel.SkinName = "DevExpress Dark Style"
         Me.NBMenu.LookAndFeel.UseDefaultLookAndFeel = False
         Me.NBMenu.Name = "NBMenu"
-        Me.NBMenu.OptionsNavPane.ExpandedWidth = 205
-        Me.NBMenu.Size = New System.Drawing.Size(205, 562)
+        Me.NBMenu.OptionsNavPane.ExpandedWidth = 236
+        Me.NBMenu.Size = New System.Drawing.Size(236, 562)
         Me.NBMenu.TabIndex = 1
         Me.NBMenu.Text = "NavBarControl1"
         Me.NBMenu.View = New DevExpress.XtraNavBar.ViewInfo.SkinExplorerBarViewInfoRegistrator()
@@ -58,7 +58,7 @@ Partial Class FormMain
         '
         'NBProduct
         '
-        Me.NBProduct.Caption = "Product"
+        Me.NBProduct.Caption = "Product Items"
         Me.NBProduct.Name = "NBProduct"
         Me.NBProduct.SmallImage = CType(resources.GetObject("NBProduct.SmallImage"), System.Drawing.Image)
         '
@@ -75,7 +75,7 @@ Partial Class FormMain
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
         Me.PanelMenu.Name = "PanelMenu"
-        Me.PanelMenu.Size = New System.Drawing.Size(205, 562)
+        Me.PanelMenu.Size = New System.Drawing.Size(236, 562)
         Me.PanelMenu.TabIndex = 2
         '
         'XtraTabbedMdiManager1
@@ -89,7 +89,7 @@ Partial Class FormMain
         Me.ClientSize = New System.Drawing.Size(1019, 562)
         Me.Controls.Add(Me.PanelMenu)
         Me.IsMdiContainer = True
-        Me.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.LookAndFeel.SkinName = "Office 2013 Light Gray"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MinimizeBox = False
         Me.Name = "FormMain"
