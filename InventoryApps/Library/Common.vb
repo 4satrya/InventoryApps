@@ -60,4 +60,39 @@ Module Common
         XtraMessageBox.Show(warning_msg, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
     End Sub
 
+    '--------Lookup---------------------
+    'View Lookup with Query
+    Public Sub viewLookupQuery(ByVal LE As DevExpress.XtraEditors.LookUpEdit, ByVal query As String, ByVal index_selected As Integer, ByVal display As String, ByVal value As String)
+        Try
+            Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+            LE.Properties.DataSource = Nothing
+            LE.Properties.DataSource = data
+            LE.Properties.DisplayMember = display
+            LE.Properties.ValueMember = value
+            LE.ItemIndex = index_selected
+        Catch ex As Exception
+            'errorConnection()
+            Console.WriteLine(ex.ToString)
+        End Try
+    End Sub
+
+    'View Lookup with Query
+    Public Sub viewSearchLookupQuery(ByVal SLE As DevExpress.XtraEditors.SearchLookUpEdit, ByVal query As String, ByVal index_selected As String, ByVal display As String, ByVal value As String)
+        'Try
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        SLE.Properties.DataSource = Nothing
+        SLE.Properties.DataSource = data
+        SLE.Properties.DisplayMember = display
+        SLE.Properties.ValueMember = value
+        If data.Rows.Count.ToString >= 1 Then
+            SLE.EditValue = data.Rows(0)(index_selected).ToString
+        Else
+            SLE.EditValue = Nothing
+        End If
+        'Catch ex As Exception
+        'errorConnection()
+        'errorCustom(ex.ToString)
+        'End Try
+    End Sub
+    '--------End Of Lookup---------------------
 End Module
